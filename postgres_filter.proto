@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package postgres_proxy;
+
+import "validate/validate.proto";
+
+// [#protodoc-title: PostgreSQL proxy]
+// PostgreSQL Proxy :ref:`configuration overview <config_network_filters_postgresql_proxy>`.
+// [#extension: postgresql_proxy]
+message PostgreSQLProxy {
+    string stat_prefix = 1 [(validate.rules).string = {min_bytes: 1}];
+}
